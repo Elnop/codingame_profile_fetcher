@@ -24,8 +24,8 @@ npm install codingame_profile_fetcher
 // Example 1: Valid profile URL
 const validProfileUrl = "https://www.codingame.com/profile/your_codingame_handle";
 try {
-  const codingamerInstance = await get_codingamer_by_url(validProfileUrl);
-  console.log("User Details:", codingamerInstance.pseudo, codingamerInstance.level, codingamerInstance.xp);
+  const codingamer = await get_codingamer_by_url(validProfileUrl);
+  console.log("User Details:", codingamer.pseudo, codingamer.level, codingamer.xp);
 } catch (error) {
   console.error("Error:", error.message);
 }
@@ -33,8 +33,8 @@ try {
 // Example 2: Invalid profile URL
 const invalidProfileUrl = "https://www.example.com/profile/invalid_handle";
 try {
-  const codingamerInstance = await get_codingamer_by_url(invalidProfileUrl);
-  console.log("User Details:", codingamerInstance.pseudo, codingamerInstance.level, codingamerInstance.xp);
+  const codingamer = await get_codingamer_by_url(invalidProfileUrl);
+  console.log("User Details:", codingamer.pseudo, codingamer.level, codingamer.xp);
 } catch (error) {
   console.error("Error:", error.message);
 }
