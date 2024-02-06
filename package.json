@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Find all informations of Codingamer profile",
   "main": "./dist/index.js",
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist",
     "README.md",
