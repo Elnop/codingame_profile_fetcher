@@ -13,6 +13,38 @@ import { __fetch_programming_languages } from "../__fetches/__fetch_programming_
 import { __fetch_achievements } from "../__fetches/__fetch_achievements";
 import { Codingame_API_Exeption } from '../Codingamer_Exeption';
 
+function __get_rank_title_threshold(rank: number): number {
+	if (rank <= 100)
+		return 1;
+	if (rank <= 500)
+		return 100;
+	if (rank <= 2500)
+		return 500;
+	if (rank <= 5000)
+		return 2500;
+	if (rank <= 10000)
+		return 5000;
+	if (rank <= 20000)
+		return 10000;
+	return 20000;
+}
+
+function __get_rank_title_id(rank: number): number {
+	if (rank <= 100)
+		return 0;
+	if (rank <= 500)
+		return 1;
+	if (rank <= 2500)
+		return 2;
+	if (rank <= 5000)
+		return 3;
+	if (rank <= 10000)
+		return 4;
+	if (rank <= 20000)
+		return 5;
+	return 6;
+}
+
 export class Codingamer {
 	public_handle: string;
 	pseudo: string | undefined;
@@ -21,6 +53,8 @@ export class Codingamer {
 	xp_cumulative: number | undefined;
 	xp_threshold: number | undefined;
 	rank: number | undefined;
+	rank_title_id: number | undefined;
+	rank_title_threshold: number | undefined;
 	id: number | undefined;
 	avatar_id: number | undefined;
 	cover_id: number | undefined;
@@ -64,6 +98,8 @@ export class Codingamer {
 		this.country_id = data.codingamer.countryId;
 		this.school_id = data.codingamer.schoolId;
 		this.rank = data.codingamer.rank;
+		this.rank_title_threshold = __get_rank_title_threshold(this.rank);
+		this.rank_title_id = __get_rank_title_id(this.rank);
 		this.avatar_id = data.codingamer.avatar;
 		this.cover_id = data.codingamer.cover;
 		this.company = data.codingamer.company;
