@@ -13,18 +13,12 @@ import { __fetch_programming_languages } from "../__fetches/__fetch_programming_
 import { __fetch_achievements } from "../__fetches/__fetch_achievements";
 import { Codingame_API_Exeption } from '../Codingamer_Exeption';
 
-function find_xp_threshold(thresholds: T_Xp_Threshold[], level: number) {
-	const thresholds_obj = thresholds.find(xp_threshold => xp_threshold.level = level);
-	if (!thresholds_obj)
-		return 0;
-	return thresholds_obj.xpThreshold;
-}
-
 export class Codingamer {
 	public_handle: string;
 	pseudo: string | undefined;
 	level: number | undefined;
 	xp: number | undefined;
+	xp_cumulative: number | undefined;
 	xp_threshold: number | undefined;
 	rank: number | undefined;
 	id: number | undefined;
@@ -75,12 +69,12 @@ export class Codingamer {
 		this.company = data.codingamer.company;
 		this.city = data.codingamer.city;
 		this.level = data.codingamer.level;
-		this.xp = data.codingamer.xp;
+		this.xp_cumulative = data.codingamer.xp;
+		this.xp = data.codingamer.xp - data.xpThresholds[0].cumulativeXp;
+		this.xp_threshold = data.xpThresholds[1].xpThreshold;
 		this.category = data.codingamer.category;
 		this.codingamer_points = data.codingamerPoints;
 		this.achievement_count = data.achievementCount;
-		if (this.level)
-			this.xp_threshold = find_xp_threshold(data.xpThresholds, this.level);
 	}
 	
 	async update_quest_certifications(abord_signal = AbortSignal.timeout(5000)): Promise<void> {
