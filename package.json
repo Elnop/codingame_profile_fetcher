@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "codingame_profile_fetcher",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Find all informations of Codingamer profile",
   "main": "./dist/index.js",
   "repository": {
@@ -50,9 +50,7 @@
   "author": "Elnop",
   "license": "ISC",
   "devDependencies": {
-    "@types/axios": "^0.14.0",
     "@types/jest": "^29.5.11",
-    "@types/mocha": "^10.0.6",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
