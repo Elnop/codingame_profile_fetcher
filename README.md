@@ -6,8 +6,8 @@ A TypeScript library for retrieving Codingame user profile information. Easily f
 
 ## Features
 
-- Fetches basic user data including pseudonym, level, XP, rank, and more.
-- Retrieves quest certifications, followers, followings, skills, and programming languages.
+- Fetches basic user data including pseudo, level, XP, rank, and more.
+- Retrieves certifications, followers, followings, skills, and programming languages.
 - Provides URLs for user avatar and cover images.
 
 ## Installation
@@ -18,35 +18,26 @@ npm install codingame_profile_fetcher
 
 ## Usage
 
-### using get_codingamer_by_url
+### Using get_codingamer_by_url
 
 ```ts
 // Example 1: Valid profile URL
-const validProfileUrl = "https://www.codingame.com/profile/your_codingame_handle";
+const validProfileUrl = "https://www.codingame.com/profile/<your_codingame_handle>";
 try {
   const codingamer = await get_codingamer_by_url(validProfileUrl);
   console.log("User Details:", codingamer.pseudo, codingamer.level, codingamer.xp);
 } catch (error) {
   console.error("Error:", error.message);
 }
-
-// Example 2: Invalid profile URL
-const invalidProfileUrl = "https://www.example.com/profile/invalid_handle";
-try {
-  const codingamer = await get_codingamer_by_url(invalidProfileUrl);
-  console.log("User Details:", codingamer.pseudo, codingamer.level, codingamer.xp);
-} catch (error) {
-  console.error("Error:", error.message);
-}
 ```
 
-### create instance manually
+### Create instance manually
 
 ```ts
 import { Codingamer } from 'codingame_profile_fetcher';
 
 // Create a new Codingamer instance with a Codingame handle
-const codingamer = new Codingamer('your_codingame_handle');
+const codingamer = new Codingamer('<your_codingame_handle>');
 
 // Update basic data
 try {
