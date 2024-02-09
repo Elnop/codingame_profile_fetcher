@@ -1,7 +1,7 @@
 import { Codingame_API_Exeption } from "../Codingamer_Exeption";
-import { T_Achivement } from "../types/T_Achivement";
+import { T_Achievement } from "../types/T_Achievement";
 
-export async function __fetch_achievements(user_id: number, signal : AbortSignal): Promise<T_Achivement[]> {
+export async function __fetch_achievements(user_id: number, signal : AbortSignal): Promise<T_Achievement[]> {
 	try {
 		const res = await fetch("https://www.codingame.com/services/Achievement/findByCodingamerId", {
 			"headers": {
@@ -26,7 +26,7 @@ export async function __fetch_achievements(user_id: number, signal : AbortSignal
 		if (!res.ok)
 			throw new Codingame_API_Exeption(`fetch_achievements error with status ${res.status}`,
 			"fetch_achievements response_not_ok", "response_not_ok", "fetch_achievements");
-		return await res.json() as T_Achivement[];
+		return await res.json() as T_Achievement[];
   	} catch (error : any) {
 	  	if (error instanceof DOMException && error.name === "TimeoutError")
 		  throw new Codingame_API_Exeption(`fetch_achievements timeout`,

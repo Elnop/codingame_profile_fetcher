@@ -12,7 +12,7 @@ import { __fetch_topic_skills } from "../__fetches/__fetch_topic_skills";
 import { __fetch_programming_languages } from "../__fetches/__fetch_programming_languages";
 import { __fetch_achievements } from "../__fetches/__fetch_achievements";
 import { Codingame_API_Exeption } from '../Codingamer_Exeption';
-import { T_Achivement } from "../types/T_Achivement";
+import { T_Achievement } from "../types/T_Achievement";
 
 function __get_rank_title_threshold(rank: number): number {
 	if (rank <= 100)
@@ -69,7 +69,7 @@ export class Codingamer {
 	quest_certifications: T_Quest_Certification[] | undefined;
 	topic_skills: T_Topic_Skill[] | undefined;
 	programming_languages: T_Programming_Language[] | undefined;
-	achievements: T_Achivement[] | undefined;
+	achievements: T_Achievement[] | undefined;
 	following_ids: number[] | undefined;
 	follower_ids: number[] | undefined;
 

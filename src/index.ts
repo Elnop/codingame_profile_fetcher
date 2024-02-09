@@ -15,10 +15,10 @@ import { T_Certification, T_Programming_Language } from './types/T_Programing_la
 import { T_Topic_Skill } from './types/T_Topic_Skill';
 import { T_Xp_Threshold } from './types/T_Xp_Threshold';
 import { Codingame_API_Exeption_Function, Codingame_API_Exeption_Type } from './Codingamer_Exeption';
-import { T_Achivement } from './types/T_Achivement';
+import { T_Achievement } from './types/T_Achievement';
 
 export  {
-    T_Achivement,
+    T_Achievement,
     T_Certification,
     T_Quest_Certification,
     T_Programming_Language,
