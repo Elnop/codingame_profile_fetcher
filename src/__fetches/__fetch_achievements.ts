@@ -1,4 +1,5 @@
 import { Codingame_API_Exeption } from "../Codingamer_Exeption";
+import { T_Achivement } from "../types/T_Achivement";
 
 export async function __fetch_achievements(user_id: number, signal : AbortSignal): Promise<T_Achivement[]> {
 	try {

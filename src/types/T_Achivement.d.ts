@@ -1,4 +1,4 @@
-type T_Achivement = {
+export type T_Achivement = {
 	categoryId: string;
 	completionTime: number;
 	description: string;

@@ -12,6 +12,7 @@ import { __fetch_topic_skills } from "../__fetches/__fetch_topic_skills";
 import { __fetch_programming_languages } from "../__fetches/__fetch_programming_languages";
 import { __fetch_achievements } from "../__fetches/__fetch_achievements";
 import { Codingame_API_Exeption } from '../Codingamer_Exeption';
+import { T_Achivement } from "../types/T_Achivement";
 
 function __get_rank_title_threshold(rank: number): number {
 	if (rank <= 100)
