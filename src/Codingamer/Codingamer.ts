@@ -158,7 +158,7 @@ export class Codingamer {
 
 	get avatar_url() {
 		if (!this.avatar_id)
-			return undefined;
+			return "https://api.dicebear.com/7.x/bottts/svg";
 		return "https://static.codingame.com/servlet/fileservlet?id="+this.avatar_id;
 	}
 
