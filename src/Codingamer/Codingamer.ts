@@ -163,8 +163,8 @@ export class Codingamer {
 	}
 
 	get cover_url() {
-		if (!this.avatar_id)
-			return undefined;
+		if (!this.cover_id)
+			return "https://static.codingame.com/assets/default_banner.3abae778.jpg";
 		return "https://static.codingame.com/servlet/fileservlet?id="+this.cover_id;
 	}
 }
