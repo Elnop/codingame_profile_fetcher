@@ -2,7 +2,7 @@ import { Codingame_API_Exeption } from "../Codingamer_Exeption";
 import { T_Topic_Skill } from "../types/T_Topic_Skill";
 
 
-export async function __fetch_topic_skills(user_id: number, signal : AbortSignal): Promise<T_Topic_Skill[]> {
+export async function __fetch_topic_skills(public_handle : string, user_id: number, signal : AbortSignal): Promise<T_Topic_Skill[]> {
 	try {
 		const res = await fetch("https://www.codingame.com/services/CodingamerPuzzleTopic/findTopicsByCodingamerId", {
 			"headers": {
@@ -16,7 +16,7 @@ export async function __fetch_topic_skills(user_id: number, signal : AbortSignal
 			  "sec-fetch-mode": "cors",
 			  "sec-fetch-site": "same-origin"
 			},
-			"referrer": "https://www.codingame.com/profile/961697f63a0daf0d4649a6f1c368acf81098515",
+			"referrer": "https://www.codingame.com/profile/"+public_handle,
 			"referrerPolicy": "strict-origin-when-cross-origin",
 			"body": `[${user_id}]`,
 			"method": "POST",

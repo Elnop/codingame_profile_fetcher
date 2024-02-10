@@ -1,7 +1,7 @@
 import { Codingame_API_Exeption } from "../Codingamer_Exeption";
 import { T_Achievement } from "../types/T_Achievement";
 
-export async function __fetch_achievements(user_id: number, signal : AbortSignal): Promise<T_Achievement[]> {
+export async function __fetch_achievements(public_handle : string, user_id: number, signal : AbortSignal): Promise<T_Achievement[]> {
 	try {
 		const res = await fetch("https://www.codingame.com/services/Achievement/findByCodingamerId", {
 			"headers": {
@@ -15,7 +15,7 @@ export async function __fetch_achievements(user_id: number, signal : AbortSignal
 				"sec-fetch-mode": "cors",
 				"sec-fetch-site": "same-origin"
 			},
-			"referrer": "https://www.codingame.com/profile/961697f63a0daf0d4649a6f1c368acf81098515",
+			"referrer": "https://www.codingame.com/profile/"+public_handle,
 			"referrerPolicy": "strict-origin-when-cross-origin",
 			"body": `[${user_id}]`,
 			"method": "POST",

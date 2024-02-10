@@ -1,6 +1,6 @@
 import { Codingame_API_Exeption } from "../Codingamer_Exeption";
 
-export async function __fetch_follower_ids(user_id: number, signal : AbortSignal): Promise<number[]> {
+export async function __fetch_follower_ids(public_handle : string, user_id: number, signal : AbortSignal): Promise<number[]> {
 	try {
 		const res = await fetch("https://www.codingame.com/services/CodinGamer/findFollowerIds", {
 			"headers": {
@@ -14,7 +14,7 @@ export async function __fetch_follower_ids(user_id: number, signal : AbortSignal
 			  "sec-fetch-mode": "cors",
 			  "sec-fetch-site": "same-origin"
 			},
-			"referrer": "https://www.codingame.com/profile/961697f63a0daf0d4649a6f1c368acf81098515",
+			"referrer": "https://www.codingame.com/profile/"+public_handle,
 			"referrerPolicy": "strict-origin-when-cross-origin",
 			"body": `[${user_id}]`,
 			"method": "POST",

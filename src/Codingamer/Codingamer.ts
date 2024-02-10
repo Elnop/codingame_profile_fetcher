@@ -118,42 +118,42 @@ export class Codingamer {
 		if (!this.id)
 			throw new Codingame_API_Exeption("user_id undefined, call update_basic_data to update it",
 			"update_quest_certifications : user_id_undefined", "user_id_undefined", "update_quest_certifications");
-		this.quest_certifications = await __fetch_quest_certifications(this.id, abord_signal);
+		this.quest_certifications = await __fetch_quest_certifications(this.public_handle, this.id, abord_signal);
 	}
 
 	async update_follower_ids(abord_signal = AbortSignal.timeout(5000)): Promise<void> {
 		if (!this.id)
 			throw new Codingame_API_Exeption("user_id undefined, call update_basic_data to update it",
 			"update_follower_ids : user_id_undefined", "user_id_undefined", "update_follower_ids")
-		this.follower_ids  = await __fetch_follower_ids(this.id, abord_signal);
+		this.follower_ids  = await __fetch_follower_ids(this.public_handle, this.id, abord_signal);
 	}
 
 	async update_following_ids(abord_signal = AbortSignal.timeout(5000)): Promise<void> {
 		if (!this.id)
 			throw new Codingame_API_Exeption("user_id undefined, call update_basic_data to update it",
 			"update_following_ids : user_id_undefined", "user_id_undefined", "update_following_ids")
-		this.following_ids = await __fetch_following_ids(this.id, abord_signal);
+		this.following_ids = await __fetch_following_ids(this.public_handle, this.id, abord_signal);
 	}
 
 	async update_topic_skills(abord_signal = AbortSignal.timeout(5000)): Promise<void> {
 		if (!this.id)
 			throw new Codingame_API_Exeption("user_id undefined, call update_basic_data to update it",
 			"update_topic_skills : user_id_undefined", "user_id_undefined", "update_topic_skills")
-		this.topic_skills = await __fetch_topic_skills(this.id, abord_signal);
+		this.topic_skills = await __fetch_topic_skills(this.public_handle, this.id, abord_signal);
 	}
 
 	async update_programming_languages(abord_signal = AbortSignal.timeout(5000)): Promise<void> {
 		if (!this.id)
 			throw new Codingame_API_Exeption("user_id undefined, call update_basic_data to update it",
 			"update_programming_languages, user_id_undefined", "user_id_undefined", "update_programming_languages")
-		this.programming_languages = await __fetch_programming_languages(this.id, abord_signal);
+		this.programming_languages = await __fetch_programming_languages(this.public_handle, this.id, abord_signal);
 	}
 
 	async update_achievements(abord_signal = AbortSignal.timeout(5000)): Promise<void> {
 		if (!this.id)
 			throw new Codingame_API_Exeption("user_id undefined, call update_basic_data to update it",
 			"update_achievements : user_id_undefined", "user_id_undefined", "update_achievements");
-		this.achievements  = await __fetch_achievements(this.id, abord_signal);
+		this.achievements  = await __fetch_achievements(this.public_handle, this.id, abord_signal);
 	}
 
 	get avatar_url() {

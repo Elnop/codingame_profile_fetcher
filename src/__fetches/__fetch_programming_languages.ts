@@ -1,7 +1,7 @@
 import { Codingame_API_Exeption } from "../Codingamer_Exeption";
 import { T_Programming_Language } from "../types/T_Programing_language";
 
-export async function __fetch_programming_languages(user_id: number, signal : AbortSignal): Promise<T_Programming_Language[]> {
+export async function __fetch_programming_languages(public_handle : string, user_id: number, signal : AbortSignal): Promise<T_Programming_Language[]> {
 	try {
 		const res = await fetch("https://www.codingame.com/services/Puzzle/countSolvedPuzzlesByProgrammingLanguage", {
 			"headers": {
@@ -15,7 +15,7 @@ export async function __fetch_programming_languages(user_id: number, signal : Ab
 				"sec-fetch-mode": "cors",
 				"sec-fetch-site": "same-origin"
 			},
-			"referrer": "https://www.codingame.com/profile/961697f63a0daf0d4649a6f1c368acf81098515",
+			"referrer": "https://www.codingame.com/profile/"+public_handle,
 			"referrerPolicy": "strict-origin-when-cross-origin",
 			"body": `[${user_id}]`,
 			"method": "POST",
