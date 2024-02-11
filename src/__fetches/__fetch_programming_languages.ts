@@ -1,5 +1,5 @@
 import { Codingame_API_Exeption } from "../Codingamer_Exeption";
-import { T_Programming_Language } from "../types/T_Programing_language";
+import { T_Programming_Language } from "../types/T_Programming_language";
 
 export async function __fetch_programming_languages(public_handle : string, user_id: number, signal : AbortSignal): Promise<T_Programming_Language[]> {
 	try {

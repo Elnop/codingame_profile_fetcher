@@ -7,7 +7,7 @@ import { __T_FindCodingamePointsStatsByHandle_body } from "../types/__fetch_basi
 import { T_Quest_Certification } from '../types/T_Quest_Certification';
 import { T_Xp_Threshold } from "../types/T_Xp_Threshold";
 import { T_Topic_Skill } from "../types/T_Topic_Skill";
-import { T_Programming_Language } from "../types/T_Programing_language";
+import { T_Programming_Language } from "../types/T_Programming_language";
 import { __fetch_topic_skills } from "../__fetches/__fetch_topic_skills";
 import { __fetch_programming_languages } from "../__fetches/__fetch_programming_languages";
 import { __fetch_achievements } from "../__fetches/__fetch_achievements";
