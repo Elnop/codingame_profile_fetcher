@@ -1,8 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "codingame_profile_fetcher",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "Find all informations of Codingamer profile",
+  "type": "module",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
